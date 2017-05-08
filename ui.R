@@ -6,13 +6,6 @@
 #
 library(shiny)
 library(rbokeh)
-#library(parallel)
-
-# Calculate the number of cores
-#no_cores <- detectCores() - 1
-
-# Initiate cluster
-#cl <- makeCluster(no_cores)
 
 shinyUI(fluidPage(
 
@@ -23,10 +16,6 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
            
-        #fileInput('file1', 'RaceID2_class_ext.R to source', 
-             #         accept = '.R'),
-            #fileInput('dataFile', 'Select .Rdata File', 
-           #           accept = '.Rdata'),
        
       textInput("gene",
                  "Gene Expression Tsne - Enter Gene:", value = 'Cx3cr1'),

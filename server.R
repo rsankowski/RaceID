@@ -40,29 +40,6 @@ cell_df_mean <- cell_df %>%
 
 shinyServer(function(input, output) {
         
-        #RaceID class file to source:
-    
-        #output$contents <- renderTable({
-        #        inFile <- input$file1
-        #        if (is.null(inFile))
-        #                return(NULL)
-        #        else{
-        #                tdata <- as.matrix(   read.table(inFile$datapath))
-        #                head(tdata, n = 2)
-         #               source("./CODE/run_myApp.r", local = TRUE)
-        #        }
-       # })
-        
-        #output$contents <- renderTable({
-         #       inFile <- input$dataFile
-         #       if (is.null(inFile))
-        #                return(NULL)
-        #        else{
-        #                tdata <- as.matrix(   read.table(inFile$datapath))
-        #                head(tdata, n = 2)
-         #               load("./CODE/run_myApp.r", local = TRUE)
-         #       }
-        #})
         
         output$bokehPlot <- renderRbokeh({
                 
@@ -81,12 +58,6 @@ shinyServer(function(input, output) {
         #Plot Tsne with group labels
         output$tsnelabelPlot <- renderPlot({
                 
-                # generate bins based on input$bins from ui.R
-                #x    <- faithful[, 2]
-                #bins <- seq(min(x), max(x), length.out = input$bins + 1)
-                
-                # draw the histogram with the specified number of bins
-                #hist(x, breaks = bins, col = 'darkgray', border = 'white')
                 plotsymbolstsne(sc,types=sub("(\\_|\\.).+","", names(sc@ndata)))
         })
        
