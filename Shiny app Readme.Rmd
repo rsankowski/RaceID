@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Readme for my RaceID shiny app
 This is a small and simple User interface for RaceID data discussions. When discussing RaceID data with my colleagues I found it hard to gett all the relevant data from different sources and having to relie on the command line makes this great package inaccessible to scientists without coding skills. 
 
-With this app, you will find all the relevant information about your RaceID output including an interactive tsne map on one browser page. To run it yourself you will need to input your *.Rdata file from your RaceID session and your RaceID_sample_ext.R file in the server.R file. Then specify the biological conditions within your dataset and then you should be good to go! The code that you will need to modify is between lines 13 and 31 in the Server.R file (see below). You run the app like any shiny app by hitting the "Run App" button on top of the server.R script.
+With this app, you will find all the relevant information about your RaceID output including an interactive tsne map on one browser page. To run it yourself you will need to input your *.Rdata file from your RaceID session and your RaceID_sample_ext.R file in the server.R file. Then specify the biological conditions within your dataset and then you should be good to go! The code that you will need to modify is between lines 13 and 31 in the Server.R file (see below). You run the app like any shiny app by opening ui.R and server.R and hitting the "Run App" button on top of the one of these scripts.
 
 Note: Since this is a very early version it the app needs about 30 seconds on my slow laptop to start up.
 
@@ -41,3 +41,4 @@ cell_df$Condition <- ifelse(grepl("Your_Cell_ID_Pattern", cell_df$Cell_ID), 'Sic
 
 ```
 
+Have fun trying it out!
